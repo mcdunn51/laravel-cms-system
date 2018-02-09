@@ -18,14 +18,33 @@
 				@foreach ($categories as $category)
 				<tbody>
 					<tr>
-						<th>Id Number</th>
-						<td>Name</td>
+						<th>{{ $category->id }}</th>
+						<td>{{ $category->name }}</td>
 					</tr>
 				</tbody>
 				@endforeach
 
 			</table>
+		</div> <!--end of col-md-8 -->
+
+		<div class="col-md-3">
+			<div class="well">
+				{!! Form::open(['route' => 'categories.store', 'method' => 'POST']) !!}
+				<h2>New Category</h2>
+
+				{{ Form::label('name', 'Name:') }}
+				{{ Form::text('name', null, ['class' => 'form-control']) }}
+
+				<br>
+				{{ Form::submit('Create New Category', ['class' => 'btn btn-primary btn-block']) }}
+
+
+				{!! Form::close() !!}					
+			</div>
 		</div>
+
+
+
 	</div>
 
 @endsection

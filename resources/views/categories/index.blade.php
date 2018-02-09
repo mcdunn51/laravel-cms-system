@@ -22,6 +22,8 @@
 						<td>Name</td>
 					</tr>
 				</tbody>
+				@endforeach
+
 			</table>
 		</div>
 	</div>

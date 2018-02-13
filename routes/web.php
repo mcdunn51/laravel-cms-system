@@ -28,6 +28,8 @@ Route::resource('posts', 'PostController');
 
 
 //the 'except' gets rid of the create function.
+Route::resource('tags', 'TagController', ['except' => ['create']]) ;
+
 Route::resource('categories', 'CategoryController', ['except' => ['create']]) ;
 
 Route::get('blog', ['uses' => 'BlogController@getIndex', 'as' => 'blog.index' ]);

@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        @include('partials/_head')
+        @yield('stylesheet')
+    </head>
 
-<head>
-@include('partials/_head')
-</head>
 
-<body>
+    <body>
+        @include('partials/_navigation')
 
-  @include('partials/_navigation')
+        <div class="container">
+            @include('partials/_messages')
+            @yield('content')      
+            @include('partials/_footer')
+        </div><!-- end of .container -->  
 
-  <div class="container">
-  	@include('partials/_messages')
-    @yield('content')      
-    @include('partials/_footer')
-  </div><!-- end of .container -->  
-
-  @include('partials/_scripts')    
-
-</body>
-
+        @include('partials/_scripts')
+        @yield('script')
+    
+    </body>
 </html>
